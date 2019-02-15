@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Rest API Demo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="/scripts/jquery-3.3.1.min.js"></script>
+        <script src="/scripts/scripts.js"></script>
+</head>
+<body>
+    
+    
+    
+    <div class="container" style="width:40%">
+            <h1>Update Products here</h1>
+                <form method="POST" action="/finalupdate">
+        <div class="form-group inline">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="pname" name="pname" value="<%= search[0].name %>">
+            </div>
+        <div class="form-group inline">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price"  name="price" value="<%= search[0].price %>">
+            </div>
+
+        <div class="form-group inline">
+                <label for="stock">Stock</label>
+                <input type="text" class="form-control" id="stock"  name="stock" value="<%= search[0].stock %>">
+                </div>
+
+                <input type="hidden" id="produtid" name="productid" value="<%= search[0].id %>" />
+        <button type="submit" class="btn btn-success mb-2" id="updateb">Update</button>
+        </form>
+
+        <br/>
+        <p id="msg"></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+        <head>
+                <title>Search Results</title>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+            </head>
+    <body>
+            <div class="jumbotron">
+        <h2 align="center">All Products Displayed Below:</h2>
+    </div>
+    
+        <p align="center">
+            <button type="submit" class="btn btn-default"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></button>
+            
+        </p>
+        <hr/>
+        <div class="container">              
+            <table class="table table-bordered">
+                    <thead>
+                            <tr>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                  </tr>
+                    </thead>
+                    <tbody>
+                            <% for(var i=0; i < search.length; i++) {%>
+                              <tr>
+                               <td><%= search[i].name %> </td>
+                               <td><%= search[i].price %></td>
+                               <td><%= search[i].stock %></td>
+                               <td><button class="btn btn-outline-primary"><a href="/edit?id=<%= search[i].id %>">Update</a></button></td>
+                               <td><button class="btn btn-outline-danger"><a href="/delete?id=<%= search[i].id %>" onclick="return confirm('Are you sure?')">Delete</a></button></td>
+                              </tr>
+                            <% } %>
+                    </tbody>
+
+              </table></div>
+        
+        
+    </body>
+    </html>
